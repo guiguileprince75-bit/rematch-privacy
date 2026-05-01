@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Politique de confidentialité — ReMatch</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --pink: #e91e8c;
+      --pink-light: #fce4f3;
+      --cream: #fdf8f5;
+      --dark: #1a0a12;
+      --gray: #6b5a63;
+    }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--dark);
+      line-height: 1.7;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 48px;
+      border-bottom: 1px solid rgba(233,30,140,0.1);
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      color: var(--pink);
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .nav-back {
+      font-size: 14px;
+      color: var(--gray);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s;
+    }
+    .nav-back:hover { color: var(--pink); }
+    main {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 64px 24px 80px;
+    }
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 40px;
+      font-weight: 700;
+      letter-spacing: -1px;
+      margin-bottom: 8px;
+    }
+    .subtitle {
+      color: var(--gray);
+      font-size: 14px;
+      margin-bottom: 48px;
+      font-weight: 300;
+    }
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 700;
+      margin: 40px 0 12px;
+      color: var(--dark);
+    }
+    p { margin-bottom: 12px; color: #3d2530; font-weight: 300; }
+    ul { margin: 8px 0 12px 20px; color: #3d2530; font-weight: 300; }
+    ul li { margin-bottom: 6px; }
+    .highlight {
+      background: var(--pink-light);
+      border-left: 3px solid var(--pink);
+      padding: 16px 20px;
+      border-radius: 0 12px 12px 0;
+      margin: 24px 0;
+      font-size: 15px;
+    }
+    a { color: var(--pink); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      border-top: 1px solid rgba(233,30,140,0.1);
+      font-size: 13px;
+      color: var(--gray);
+      font-weight: 300;
+    }
+    @media (max-width: 640px) {
+      nav { padding: 16px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="index.html">ReMatch</a>
+    <a class="nav-back" href="index.html">← Retour à l'accueil</a>
+  </nav>
+
+  <main>
+    <h1>Politique de confidentialité</h1>
+    <p class="subtitle">Dernière mise à jour : mai 2025</p>
+
+    <div class="highlight">
+      ReMatch est une application de jeu pour couples. Nous accordons une importance primordiale à la protection de vos données personnelles.
+    </div>
+
+    <h2>1. Données collectées</h2>
+    <p>ReMatch collecte uniquement les données nécessaires au fonctionnement du jeu :</p>
+    <ul>
+      <li><strong>Prénom</strong> : saisi lors de la création ou du rejoindre d'un couple, affiché dans l'application.</li>
+      <li><strong>Identifiant anonyme (UID)</strong> : généré automatiquement et anonymement par Firebase Authentication. Aucune adresse e-mail ni mot de passe n'est demandé.</li>
+      <li><strong>Code couple</strong> : code à 6 chiffres permettant de lier deux joueurs entre eux.</li>
+      <li><strong>Réponses aux questions</strong> : vos réponses aux questions quotidiennes, stockées associées à votre UID anonyme.</li>
+      <li><strong>Points et statistiques de jeu</strong> : score total, streak, historique des parties.</li>
+    </ul>
+
+    <h2>2. Données non collectées</h2>
+    <p>Nous ne collectons <strong>pas</strong> les données suivantes :</p>
+    <ul>
+      <li>Adresse e-mail ou numéro de téléphone</li>
+      <li>Localisation géographique</li>
+      <li>Informations de paiement</li>
+      <li>Données biométriques</li>
+      <li>Contacts de l'appareil</li>
+      <li>Données de navigation ou de publicité</li>
+    </ul>
+
+    <h2>3. Utilisation des données</h2>
+    <p>Les données collectées sont utilisées exclusivement pour :</p>
+    <ul>
+      <li>Faire fonctionner le jeu quotidien entre les deux membres du couple</li>
+      <li>Afficher les scores et l'historique des parties</li>
+      <li>Permettre la synchronisation en temps réel entre les deux appareils du couple</li>
+    </ul>
+    <p>Vos données ne sont jamais utilisées à des fins publicitaires, ni partagées avec des tiers à des fins commerciales.</p>
+
+    <h2>4. Stockage et sécurité</h2>
+    <p>Les données sont stockées sur <strong>Google Firebase (Firestore)</strong>, un service cloud sécurisé de Google. Les données sont accessibles uniquement par les membres du couple partageant le même code.</p>
+    <p>Une copie minimale de votre profil (UID, prénom, code couple) est conservée localement sur votre appareil via le stockage système sécurisé.</p>
+
+    <h2>5. Partage des données</h2>
+    <p>Nous ne vendons, ne louons et ne partageons jamais vos données personnelles avec des tiers, à l'exception de Google Firebase qui héberge techniquement les données (voir <a href="https://firebase.google.com/support/privacy" target="_blank">politique de confidentialité Firebase</a>).</p>
+
+    <h2>6. Suppression des données</h2>
+    <p>Vous pouvez demander la suppression de vos données à tout moment en nous contactant. En l'absence d'activité, les données sont conservées tant que le compte couple existe dans l'application.</p>
+
+    <h2>7. Enfants</h2>
+    <p>ReMatch est destiné aux personnes majeures. Nous ne collectons pas sciemment de données concernant des mineurs de moins de 13 ans.</p>
+
+    <h2>8. Modifications</h2>
+    <p>Nous pouvons mettre à jour cette politique. La date de dernière mise à jour est indiquée en haut de cette page.</p>
+
+    <h2>9. Contact</h2>
+    <p>Pour toute question : <a href="mailto:guillaumeleprince75@gmail.com">guillaumeleprince75@gmail.com</a></p>
+  </main>
+
+  <footer>
+    © 2025 ReMatch · <a href="index.html">Retour à l'accueil</a>
+  </footer>
+
+</body>
+</html>
