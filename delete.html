@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Supprimer mon compte — Nos Bulles</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --pink: #e91e8c;
+      --pink-light: #fce4f3;
+      --pink-dark: #b5106d;
+      --purple: #7c3aed;
+      --cream: #fdf8f5;
+      --dark: #1a0a12;
+      --gray: #6b5a63;
+      --gray-light: #f5f0f3;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--dark);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 48px;
+      background: rgba(253, 248, 245, 0.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(233, 30, 140, 0.1);
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      color: var(--pink);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 120px 24px 80px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 24px;
+      padding: 48px;
+      max-width: 560px;
+      width: 100%;
+      box-shadow: 0 20px 60px rgba(26,10,18,0.08);
+      border: 1px solid rgba(233,30,140,0.1);
+    }
+
+    .icon {
+      width: 64px;
+      height: 64px;
+      background: #fef2f2;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      color: var(--dark);
+      margin-bottom: 12px;
+    }
+
+    .subtitle {
+      color: var(--gray);
+      font-size: 15px;
+      line-height: 1.7;
+      margin-bottom: 32px;
+    }
+
+    .info-box {
+      background: var(--gray-light);
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 32px;
+      font-size: 14px;
+      color: var(--gray);
+      line-height: 1.7;
+    }
+
+    .info-box strong {
+      color: var(--dark);
+      display: block;
+      margin-bottom: 8px;
+      font-size: 15px;
+    }
+
+    .info-box ul {
+      padding-left: 20px;
+    }
+
+    .info-box li {
+      margin-bottom: 4px;
+    }
+
+    label {
+      display: block;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--dark);
+      margin-bottom: 8px;
+    }
+
+    input[type="email"], textarea {
+      width: 100%;
+      padding: 14px 18px;
+      border: 1.5px solid rgba(26,10,18,0.15);
+      border-radius: 12px;
+      font-size: 15px;
+      font-family: 'DM Sans', sans-serif;
+      color: var(--dark);
+      background: white;
+      outline: none;
+      transition: border-color 0.2s;
+      margin-bottom: 20px;
+    }
+
+    input[type="email"]:focus, textarea:focus {
+      border-color: var(--pink);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .btn-danger {
+      width: 100%;
+      padding: 16px;
+      background: #dc2626;
+      color: white;
+      border: none;
+      border-radius: 100px;
+      font-size: 16px;
+      font-weight: 500;
+      font-family: 'DM Sans', sans-serif;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-danger:hover {
+      background: #b91c1c;
+      transform: translateY(-1px);
+    }
+
+    .btn-danger:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .success-msg {
+      display: none;
+      background: #f0fdf4;
+      border: 1.5px solid #86efac;
+      color: #166534;
+      padding: 16px 24px;
+      border-radius: 16px;
+      font-size: 15px;
+      margin-top: 16px;
+      text-align: center;
+    }
+
+    .error-msg {
+      display: none;
+      color: #dc2626;
+      font-size: 14px;
+      margin-top: 12px;
+      text-align: center;
+    }
+
+    .back-link {
+      display: block;
+      text-align: center;
+      margin-top: 24px;
+      color: var(--gray);
+      font-size: 14px;
+      text-decoration: none;
+    }
+
+    .back-link:hover { color: var(--pink); }
+
+    footer {
+      background: var(--dark);
+      color: rgba(255,255,255,0.4);
+      text-align: center;
+      padding: 24px;
+      font-size: 13px;
+    }
+
+    footer a { color: var(--pink); text-decoration: none; }
+
+    @media (max-width: 640px) {
+      nav { padding: 16px 20px; }
+      .card { padding: 32px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Nos Bulles</a>
+  </nav>
+
+  <main>
+    <div class="card">
+      <div class="icon">🗑️</div>
+      <h1>Supprimer mon compte</h1>
+      <p class="subtitle">
+        Vous pouvez demander la suppression de votre compte et de toutes vos données associées en remplissant ce formulaire. Votre demande sera traitée sous 7 jours ouvrés.
+      </p>
+
+      <div class="info-box">
+        <strong>Données supprimées :</strong>
+        <ul>
+          <li>Votre profil (prénom, UID)</li>
+          <li>Vos réponses aux questions quotidiennes</li>
+          <li>Vos points et votre streak</li>
+          <li>Vos cartes dans l'inventaire</li>
+          <li>Votre participation au couple</li>
+        </ul>
+      </div>
+
+      <form id="delete-form">
+        <label for="email">Votre adresse email</label>
+        <input type="email" id="email" name="email" placeholder="votre@email.com" required />
+
+        <label for="reason">Raison (optionnel)</label>
+        <textarea id="reason" name="reason" placeholder="Dites-nous pourquoi vous souhaitez supprimer votre compte…"></textarea>
+
+        <button type="submit" class="btn-danger">Demander la suppression de mon compte</button>
+      </form>
+
+      <div class="success-msg" id="success-msg">
+        ✅ Votre demande a bien été reçue. Nous traiterons la suppression de votre compte sous 7 jours ouvrés.
+      </div>
+      <div class="error-msg" id="error-msg">
+        Une erreur est survenue. Réessayez dans un instant.
+      </div>
+
+      <a href="index.html" class="back-link">← Retour à l'accueil</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Nos Bulles · <a href="privacy.html">Politique de confidentialité</a> · <a href="delete.html">Supprimer mon compte</a></p>
+  </footer>
+
+  <script>
+    const form = document.getElementById('delete-form');
+    const successMsg = document.getElementById('success-msg');
+    const errorMsg = document.getElementById('error-msg');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = form.querySelector('button');
+      btn.textContent = 'Envoi en cours…';
+      btn.disabled = true;
+
+      const data = new FormData(form);
+      data.append('_subject', 'Demande de suppression de compte — Nos Bulles');
+
+      try {
+        const res = await fetch('https://formspree.io/f/xwvypqww', {
+          method: 'POST',
+          body: data,
+          headers: { Accept: 'application/json' },
+        });
+
+        if (res.ok) {
+          form.style.display = 'none';
+          successMsg.style.display = 'block';
+          errorMsg.style.display = 'none';
+        } else {
+          throw new Error();
+        }
+      } catch {
+        errorMsg.style.display = 'block';
+        btn.textContent = 'Demander la suppression de mon compte';
+        btn.disabled = false;
+      }
+    });
+  </script>
+
+</body>
+</html>
